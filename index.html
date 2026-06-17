@@ -6,24 +6,24 @@
     <title>Lilan Li</title>
     <style>
         :root {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --accent-color: #888888;
+            --border-color: #333333;
+        }
+
+        /* Theme Definitions */
+        body.theme-light {
             --bg-color: #ffffff;
             --text-color: #000000;
             --accent-color: #555555;
             --border-color: #eeeeee;
         }
-
-        /* Theme Definitions */
         body.theme-pink {
             --bg-color: #fecfef;
             --text-color: #d81b60;
             --accent-color: #ff9a9e;
             --border-color: #ff9a9e;
-        }
-        body.theme-dark {
-            --bg-color: #1a1a1a;
-            --text-color: #f0f0f0;
-            --accent-color: #888888;
-            --border-color: #333333;
         }
         body.theme-classic {
             --bg-color: #f4f4f4;
@@ -44,11 +44,13 @@
             transition: background-color 0.3s, color 0.3s;
         }
         
-        /* Dropdown Menu Styling */
-        .nav-menu {
+        /* Navigation Styling */
+        .nav-container {
             position: absolute;
             top: 20px;
             right: 20px;
+            display: flex;
+            gap: 15px;
         }
         .dropdown {
             position: relative;
@@ -74,8 +76,8 @@
             position: absolute;
             right: 0;
             background-color: var(--bg-color);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             border: 1px solid var(--border-color);
             z-index: 1;
         }
@@ -180,17 +182,30 @@
     </style>
 </head>
 <body>
-    <nav class="nav-menu">
+    <div class="nav-container">
+        <!-- Folders Menu -->
+        <div class="dropdown">
+            <button class="dropbtn">Portfolio ▾</button>
+            <div class="dropdown-content">
+                <a href="AI & Deep Finance/DeepQuantFinance.txt" target="_blank">AI & Deep Finance</a>
+                <a href="Books/books.txt" target="_blank">Books</a>
+                <a href="Industrial Experts/Andrew French.txt" target="_blank">Expert: Andrew French</a>
+                <a href="Industrial Experts/Damien Loisson.txt" target="_blank">Expert: Damien Loisson</a>
+                <a href="Structured Products/SP.txt" target="_blank">Structured Products</a>
+            </div>
+        </div>
+
+        <!-- Style Menu -->
         <div class="dropdown">
             <button class="dropbtn">Style Menu ▾</button>
             <div class="dropdown-content">
-                <a href="#" onclick="setTheme('default')">Professional (Light)</a>
+                <a href="#" onclick="setTheme('dark')">Dark Mode (Default)</a>
+                <a href="#" onclick="setTheme('light')">Professional (Light)</a>
                 <a href="#" onclick="setTheme('pink')">Pink Aesthetic</a>
-                <a href="#" onclick="setTheme('dark')">Dark Mode</a>
                 <a href="#" onclick="setTheme('classic')">Classic Grey</a>
             </div>
         </div>
-    </nav>
+    </div>
 
     <div class="container">
         <header>
