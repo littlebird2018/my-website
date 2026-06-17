@@ -5,67 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lilan Li</title>
     <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #555555;
+            --border-color: #eeeeee;
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 0;
-            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.6;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
         .container {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        header {
+            margin-bottom: 60px;
+            border-bottom: 2px solid var(--text-color);
+            padding-bottom: 20px;
         }
         h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #d81b60;
+            font-family: "Georgia", serif;
+            font-size: 2.5em;
+            font-weight: normal;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: #444;
+        .tagline {
+            font-size: 1.1em;
+            color: var(--accent-color);
+            margin-bottom: 15px;
         }
-        img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ff9a9e;
-            margin-bottom: 20px;
+        .contact-info {
+            font-size: 0.9em;
+            color: var(--accent-color);
         }
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: #d81b60;
-            color: white;
+        .contact-info a {
+            color: var(--text-color);
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: transform 0.2s;
+            border-bottom: 1px solid var(--accent-color);
         }
-        .button:hover {
-            transform: scale(1.05);
+        section {
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        .item {
+            margin-bottom: 25px;
+        }
+        .item-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .item-date {
+            font-weight: normal;
+            font-size: 0.85em;
+            color: var(--accent-color);
+        }
+        .item-desc {
+            margin-top: 5px;
+            color: #333;
+        }
+        a.external {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        a.external:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 100px;
+            font-size: 0.8em;
+            color: var(--accent-color);
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Replace 'your-photo.jpg' with your actual image filename -->
-        <img src="your-photo.jpg" alt="Profile Photo">
-        <h1>Welcome to LilanLi.com</h1>
-        <p>This is your new website! You can customize this text, add more pages, and make it your own.</p>
-        <a href="#" class="button">Get in Touch</a>
+        <header>
+            <h1>Lilan Li</h1>
+            <p class="tagline">Finance professional · Structured Products · Industrial Expert</p>
+            <div class="contact-info">
+                <span>London, UK</span> | 
+                <a href="mailto:lilan.li@example.com">Email Me</a> | 
+                <a href="#">LinkedIn</a>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction</h2>
+                <div class="item">
+                    <p>Welcome to my professional portfolio. I specialize in AI & Deep Finance, Structured Products, and collaborate with top-tier industrial experts to deliver high-impact financial solutions.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Areas of Expertise</h2>
+                <div class="item">
+                    <div class="item-title">AI & Deep Finance</div>
+                    <p class="item-desc">Exploring the intersection of deep learning and financial modeling to optimize trading strategies and risk management.</p>
+                </div>
+                <div class="item">
+                    <div class="item-title">Structured Products</div>
+                    <p class="item-desc">Design and analysis of complex financial instruments tailored to specific risk-return profiles.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Industrial Collaborations</h2>
+                <div class="item">
+                    <div class="item-title">
+                        <a href="#" class="external">Andrew French ↗</a>
+                    </div>
+                    <p class="item-desc">Collaboration on advanced financial analytics and market research.</p>
+                </div>
+                <div class="item">
+                    <div class="item-title">
+                        <a href="#" class="external">Damien Loisson ↗</a>
+                    </div>
+                    <p class="item-desc">Research focused on algorithmic trading and computational finance.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            &copy; 2026 Lilan Li. Built with precision.
+        </footer>
     </div>
 </body>
 </html>
