@@ -1,0 +1,6 @@
+I come from a quant modelling background with model Driven approach
+Sell side, buy side with FTSE Russell on portfolio construction and Rebalancing 
+AI enabled Quant Research
+Data rich world great for back testing, predictive /focast/dynamic calibration of algo trading strategy, and ST risk factor & scenario generation. 
+Worked on numerous market model: sabr vol, Heston, XVA siimulation - which I have published a book with python prototypes (tranditional CPU driven, very slow and not scallable) - that was back in 2019 - it was the way how 
+Model Driven approach or simply markets model 
