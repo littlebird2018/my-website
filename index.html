@@ -11,6 +11,27 @@
             --accent-color: #555555;
             --border-color: #eeeeee;
         }
+
+        /* Theme Definitions */
+        body.theme-pink {
+            --bg-color: #fecfef;
+            --text-color: #d81b60;
+            --accent-color: #ff9a9e;
+            --border-color: #ff9a9e;
+        }
+        body.theme-dark {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --accent-color: #888888;
+            --border-color: #333333;
+        }
+        body.theme-classic {
+            --bg-color: #f4f4f4;
+            --text-color: #2c3e50;
+            --accent-color: #34495e;
+            --border-color: #bdc3c7;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
@@ -20,7 +41,58 @@
             line-height: 1.6;
             display: flex;
             justify-content: center;
+            transition: background-color 0.3s, color 0.3s;
         }
+        
+        /* Dropdown Menu Styling */
+        .nav-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: transparent;
+            color: var(--text-color);
+            padding: 8px 16px;
+            font-size: 0.85em;
+            border: 1px solid var(--text-color);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.2s;
+        }
+        .dropbtn:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: var(--bg-color);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9em;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--border-color);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .container {
             max-width: 800px;
             width: 100%;
@@ -108,6 +180,18 @@
     </style>
 </head>
 <body>
+    <nav class="nav-menu">
+        <div class="dropdown">
+            <button class="dropbtn">Style Menu ▾</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="setTheme('default')">Professional (Light)</a>
+                <a href="#" onclick="setTheme('pink')">Pink Aesthetic</a>
+                <a href="#" onclick="setTheme('dark')">Dark Mode</a>
+                <a href="#" onclick="setTheme('classic')">Classic Grey</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
             <img src="profie.jpg" alt="Lilan Li" class="profile-img">
@@ -161,5 +245,21 @@
             &copy; 2026 Lilan Li. Built with precision.
         </footer>
     </div>
+
+    <script>
+        function setTheme(theme) {
+            document.body.className = ''; // Reset
+            if (theme !== 'default') {
+                document.body.classList.add('theme-' + theme);
+            }
+            localStorage.setItem('user-theme', theme);
+        }
+
+        // Load saved theme on startup
+        const savedTheme = localStorage.getItem('user-theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        }
+    </script>
 </body>
 </html>
