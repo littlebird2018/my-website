@@ -195,17 +195,6 @@
                 <a href="Structured Products/SP.txt" target="_blank">Structured Products</a>
             </div>
         </div>
-
-        <!-- Style Menu -->
-        <div class="dropdown">
-            <button class="dropbtn">Style Menu ▾</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="setTheme('dark')">Dark Mode (Default)</a>
-                <a href="#" onclick="setTheme('light')">Professional (Light)</a>
-                <a href="#" onclick="setTheme('pink')">Pink Aesthetic</a>
-                <a href="#" onclick="setTheme('classic')">Classic Grey</a>
-            </div>
-        </div>
     </div>
 
     <div class="container">
@@ -262,20 +251,5 @@
         </footer>
     </div>
 
-    <script>
-        function setTheme(theme) {
-            document.body.className = ''; // Reset
-            if (theme !== 'default') {
-                document.body.classList.add('theme-' + theme);
-            }
-            localStorage.setItem('user-theme', theme);
-        }
-
-        // Load saved theme on startup
-        const savedTheme = localStorage.getItem('user-theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
-        }
-    </script>
 </body>
 </html>
