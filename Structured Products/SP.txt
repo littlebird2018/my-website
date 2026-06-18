@@ -1,8 +1,2 @@
- Across all asset classes: EQ, COM, FX, Rates and Credit, especially those hybrids. 
+The structured products training covers all asset classes: EQ, COM, FX, Rates and Credit with yield enhancement, principle protection and liquidity booster. 
 
-
-• Short Put Risk in Autocalls — what your private banker doesn't tell you"
-• "Correlation in Basket Products — how downside scenarios compound"
-• "FCN vs Autocall — which product suits which client"
-• "Principal Protection — is it real or marketing?"
-• "Range Accrual — the hidden path dependency"
